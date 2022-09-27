@@ -21,7 +21,7 @@ import {
 } from '@ionic/vue'
 import { calendarOutline, cashOutline } from 'ionicons/icons'
 
-import { Movie } from '@/interfaces/Movie'
+import { Movie } from '../interfaces/Movie'
 
 const baseUrl = import.meta.env.VITE_BASE_URL as string
 const apiKey = import.meta.env.VITE_API_KEY as string
@@ -70,12 +70,14 @@ function openHomePage() {
     <ion-toolbar color="success">
       <ion-title>{{ movie?.title }}</ion-title>
       <ion-buttons slot="start">
-        <ion-back-button defaultHref="/"></ion-back-button>
+        <!--! WTF IS THIS SHIT IONIC -->
+        <ion-back-button default-href="/home"></ion-back-button>
+        <ion-button router-link="/home">Back</ion-button>
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
 
-  <ion-content>
+  <ion-content full-screen="true">
     <ion-card v-if="movie">
       <img :src="imageUrl + '/w400/' + movie.poster_path" />
 

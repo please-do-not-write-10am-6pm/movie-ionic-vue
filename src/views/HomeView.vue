@@ -16,8 +16,8 @@ import {
   IonToolbar,
 } from '@ionic/vue'
 
-import { Movie } from '@/interfaces/Movie'
-import { ApiResult } from '@/interfaces/ApiResult'
+import { Movie } from '../interfaces/Movie'
+import { ApiResult } from '../interfaces/ApiResult'
 
 const baseUrl = import.meta.env.VITE_BASE_URL as string
 const apiKey = import.meta.env.VITE_API_KEY as string
